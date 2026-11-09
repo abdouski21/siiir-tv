@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100923">
+  <meta name="description" content="حمّل تطبيق Sir TV لمتابعة المباريات بسهولة.">
+  <title>Sir TV | شاهد المباريات بكل سهولة</title>
+  <link rel="icon" type="image/png" href="assets/sir-tv-icon.png">
+  <style>
+    :root{color-scheme:dark;--bg:#100923;--panel:#1c1034;--purple:#8b45f6;--pink:#c46bff;--white:#fff;--muted:#c9bddc}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:var(--white);line-height:1.7}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1120px,92%);margin:auto}
+    header{height:82px;display:flex;align-items:center;border-bottom:1px solid #ffffff12;background:#100923eF;position:relative;z-index:2}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-size:23px;font-weight:800}
+    .brand img{width:48px;height:48px;object-fit:contain;border-radius:13px}
+    .navlink{color:#e6d9f6;font-size:14px}
+    .hero{position:relative;overflow:hidden;min-height:610px;display:flex;align-items:center;background:radial-gradient(ellipse at 15% 40%,#6126a7 0,transparent 42%),linear-gradient(120deg,#1c0b37,#100923 68%)}
+    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#10092312,#100923aa),repeating-linear-gradient(115deg,transparent 0 80px,#ffffff05 81px 83px)}
+    .hero-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:45px;padding:70px 0}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border:1px solid #c58aff55;border-radius:99px;color:#e6caff;background:#8b45f622;font-size:13px}
+    h1{font-size:clamp(42px,6vw,68px);line-height:1.2;margin:20px 0 14px;font-weight:900;letter-spacing:-1px}
+    h1 span{color:#c78aff}
+    .lead{font-size:19px;color:#d7cbe6;max-width:570px;margin:0 0 30px}
+    .download{display:inline-flex;align-items:center;justify-content:center;gap:14px;padding:17px 30px;border-radius:16px;background:linear-gradient(110deg,#a34cff,#7130df);box-shadow:0 12px 40px #8b45f65c;border:1px solid #d9b4ff88;font-size:19px;font-weight:800;transition:.2s}
+    .download:hover{transform:translateY(-3px);box-shadow:0 16px 48px #8b45f688}
+    .download svg{width:24px;height:24px}
+    .meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+    .chip{background:#ffffff0c;border:1px solid #ffffff19;border-radius:12px;padding:9px 14px;color:#e6dcef;font-size:13px}
+    .app-art{display:flex;justify-content:center;align-items:center}
+    .phone{width:min(300px,80%);padding:12px;border:2px solid #ffffff35;border-radius:38px;background:linear-gradient(145deg,#38205a,#120a20);box-shadow:0 25px 90px #0009,0 0 55px #9b4cff30;transform:rotate(-5deg)}
+    .screen{min-height:420px;border-radius:28px;padding:24px 17px;background:radial-gradient(circle at 50% 15%,#6334a0,#211039 55%,#130b22);text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+    .screen img{width:100px;height:100px;border-radius:25px;box-shadow:0 10px 35px #0007}
+    .screen strong{font-size:27px;margin-top:15px}
+    .screen p{color:#d6c3ed;font-size:14px;margin:5px 0 24px}
+    .match{width:100%;padding:17px 10px;border-radius:16px;background:#ffffff12;border:1px solid #ffffff20}
+    .teams{display:flex;align-items:center;justify-content:space-around;font-weight:700}
+    .vs{color:#c78aff;font-size:13px}
+    .live{display:inline-block;margin-top:14px;background:#ed3e70;padding:3px 13px;border-radius:99px;font-size:12px}
+    section.features{padding:75px 0;background:#160b2a}
+    .section-title{text-align:center;font-size:32px;margin:0 0 10px}
+    .section-sub{text-align:center;color:var(--muted);margin:0 0 35px}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .card{padding:25px 20px;border:1px solid #ffffff16;border-radius:18px;background:linear-gradient(145deg,#26143f,#1a0e2d)}
+    .symbol{width:46px;height:46px;display:grid;place-items:center;border-radius:14px;background:#8b45f629;color:#d5aaff;font-size:23px}
+    .card h3{margin:14px 0 5px}.card p{margin:0;color:var(--muted);font-size:14px}
+    .bottom{text-align:center;padding:65px 0;background:radial-gradient(ellipse at center,#4a2075 0,transparent 65%)}
+    .bottom h2{font-size:30px;margin:0 0 10px}.bottom p{color:var(--muted);margin:0 0 25px}
+    footer{border-top:1px solid #ffffff14;padding:22px 0;text-align:center;color:#a99ab9;font-size:13px}
+    @media(max-width:760px){header{height:70px}.navlink{display:none}.hero-grid{grid-template-columns:1fr;text-align:center;padding:55px 0 45px;gap:35px}.lead{margin-inline:auto}.meta{justify-content:center}.app-art{order:2}.phone{width:245px}.screen{min-height:350px}.cards{grid-template-columns:1fr}.section-title{font-size:27px}.download{font-size:17px;padding:15px 22px}}
+  </style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="#"><img src="assets/sir-tv-icon.png" alt="شعار Sir TV"><span>Sir TV</span></a>
+  <a class="navlink" href="#features">مميزات التطبيق</a>
+</div></header>
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">⚽ عالم المباريات بين يديك</div>
+        <h1>شاهد المباريات<br><span>بكل سهولة!</span></h1>
+        <p class="lead">تطبيق Sir TV لمتابعة المباريات والبطولات. حمّل التطبيق وابدأ باستخدامه على هاتفك.</p>
+        <a class="download" href="assets/sir-tv.apk" download="Sir-TV.apk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+          تحميل التطبيق الآن
+        </a>
+        <div class="meta">
+          <div class="chip">🤖 متوافق مع Android</div>
+          <div class="chip">📦 حجم الملف: 4.5 MB تقريباً</div>
+          <div class="chip">📱 تطبيق Sir TV</div>
+        </div>
+      </div>
+      <div class="app-art">
+        <div class="phone"><div class="screen">
+          <img src="assets/sir-tv-icon.png" alt="أيقونة Sir TV">
+          <strong>Sir TV</strong><p>كل المباريات في مكان واحد</p>
+          <div class="match"><div class="teams"><span>الفريق الأول</span><span class="vs">VS</span><span>الفريق الثاني</span></div><span class="live">● تابع المباريات</span></div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+  <section class="features" id="features">
+    <div class="wrap">
+      <h2 class="section-title">مميزات التطبيق</h2>
+      <p class="section-sub">تجربة سهلة لمتابعة عالم كرة القدم</p>
+      <div class="cards">
+        <article class="card"><div class="symbol">▶</div><h3>متابعة المباريات</h3><p>واجهة مخصصة للوصول إلى محتوى المباريات بسهولة.</p></article>
+        <article class="card"><div class="symbol">⚡</div><h3>سهولة الاستخدام</h3><p>تصميم واضح وبسيط لتجربة استخدام مريحة.</p></article>
+        <article class="card"><div class="symbol">📱</div><h3>على هاتفك</h3><p>حمّل التطبيق على جهاز Android وابدأ الاستخدام.</p></article>
+        <article class="card"><div class="symbol">📶</div><h3>لا يحتاج إنترنت سريع</h3><p>يمكنك استخدام التطبيق دون الحاجة إلى اتصال إنترنت عالي السرعة.</p></article>
+        <article class="card"><div class="symbol">💧</div><h3>استهلاك أقل للبيانات</h3><p>مصمم ليكون مناسباً لمن يريد ترشيد استهلاك باقة الإنترنت.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="bottom"><div class="wrap">
+    <h2>جاهز لتجربة Sir TV؟</h2>
+    <p>اضغط على الزر وحمّل ملف التطبيق مباشرة.</p>
+    <a class="download" href="assets/sir-tv.apk" download="Sir-TV.apk">تحميل التطبيق الآن</a>
+  </div></section>
+</main>
+<footer><div class="wrap">© <span id="year">2026</span> Sir TV. جميع الحقوق محفوظة.</div></footer>
+</body></html>
